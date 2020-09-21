@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Basic Calculator</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Javascript calaculator" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'todolist/bs/bootstrap.min.css' %}" />
+        <link href="{% static 'todolist/styles.css'%}" rel="stylesheet" type="text/css" />
+    
+    </head>
+    
+    <body>
+        <h1>Basic Calculator</h1>
+        <br/>
+        <form id ="myform" Name="calc">
+        <input name="display" style="width:675px;height: 100px;text-align: center;background-color: dodgerblue;"> <br/>
+        <input type="button" value="0" OnClick="calc.display.value+='0'">
+        <input type="button" value="1" OnClick="calc.display.value+='1'">
+        <input type="button" value="2" OnClick="calc.display.value+='2'">
+        <input type="button" value="+" OnClick="calc.display.value+='+'" style="background-color: orange;"><br/>
+        <input type="button" value="3" onclick="calc.display.value+='3'">
+        <input type="button" value="4" onclick="calc.display.value+='4'">
+        <input type="button" value="5" onclick="calc.display.value+='5'">
+        <input type="button" value="-" onclick="calc.display.value+='-'" style="background-color: rebeccapurple;"><br/>
+        <input type="button" value="6" onclick="calc.display.value+='6'">
+        <input type="button" value="7" onclick="calc.display.value+='7'">
+        <input type="button" value="8" onclick="calc.display.value+='8'">
+        <input type="button" value="*" onclick="calc.display.value+='*'" style="background-color: skyblue;"><br/>
+        <input type="button" value="9" onclick="calc.display.value+='9'">
+        <input type="button" value="C" OnClick="calc.display.value=''" style="background-color: red;">
+        <input type="button" value="=" OnClick="calc.display.value=eval(calc.display.value)">
+        <input type="button" value="&#247;" onclick="calc.display.value+='/'" style="background-color: green;">
+        </form>
+    
+    </body>
+    
+    
+</html>
