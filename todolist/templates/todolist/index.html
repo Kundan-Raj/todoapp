@@ -2,38 +2,60 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Basic Calculator</title>
+        <title>Todo app</title>
         <meta charset="utf-8">
-        <meta name="description" content="Javascript calaculator" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'todolist/bs/bootstrap.min.css' %}" />
         <link href="{% static 'todolist/styles.css'%}" rel="stylesheet" type="text/css" />
-    
+   <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    -->
     </head>
     
     <body>
-        <h1>Basic Calculator</h1>
+        <h1>What to do today.</h1>
         <br/>
-        <form id ="myform" Name="calc">
-        <input name="display" style="width:675px;height: 100px;text-align: center;background-color: dodgerblue;"> <br/>
-        <input type="button" value="0" OnClick="calc.display.value+='0'">
-        <input type="button" value="1" OnClick="calc.display.value+='1'">
-        <input type="button" value="2" OnClick="calc.display.value+='2'">
+        <div class="container-floor" id="wrapper">
+        <form id ="myform" Name="textwrite">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter your todo lists">
+                    <div class="input-group-postpend">
+                        <span class="input-group-text">ADD</span>
+                    </div>
+                <input type="button" value="Clear" OnClick="calc.display.value=''" style="background-color: dodgerblue;">
+            </div>
+        </form><hr>
+       <!-- <input name="display" style="width:675px;height: 100px;text-align: center;background-color: dodgerblue;">  
         <input type="button" value="+" OnClick="calc.display.value+='+'" style="background-color: orange;"><br/>
-        <input type="button" value="3" onclick="calc.display.value+='3'">
-        <input type="button" value="4" onclick="calc.display.value+='4'">
-        <input type="button" value="5" onclick="calc.display.value+='5'">
         <input type="button" value="-" onclick="calc.display.value+='-'" style="background-color: rebeccapurple;"><br/>
-        <input type="button" value="6" onclick="calc.display.value+='6'">
-        <input type="button" value="7" onclick="calc.display.value+='7'">
-        <input type="button" value="8" onclick="calc.display.value+='8'">
-        <input type="button" value="*" onclick="calc.display.value+='*'" style="background-color: skyblue;"><br/>
-        <input type="button" value="9" onclick="calc.display.value+='9'">
-        <input type="button" value="C" OnClick="calc.display.value=''" style="background-color: red;">
-        <input type="button" value="=" OnClick="calc.display.value=eval(calc.display.value)">
-        <input type="button" value="&#247;" onclick="calc.display.value+='/'" style="background-color: green;">
-        </form>
-    
+        <input type="button" value="*" onclick="calc.display.value+='*'" style="background-color: skyblue;"><br/> -->
+       <!-- <input type="button" value="Delete" OnClick="calc.display.value=eval(calc.display.value)"> -->
+            <div class="list">
+                <ul class="list-group t20">
+                    {% for todolist in todo_items %}
+                    {% if todolist.completed %}
+                    <li class="list-group-items todo-completed">{{todolist.text}}</li>
+                    {% else %}
+                    <a href="#"><li class="list-group-items">{{todolist.text}}</li></a>
+                    {% endif %}
+                    {% endfor %}
+                    <!--
+                    <li class="list-goup-items">Learning Udemy course</li>
+                    <li class="list-group-items todo-completed">Create DBMS table.</li>
+                    <li class="list-group-items">Attend session on DevOps.</li>
+                    -->
+                </ul>     
+            </div>
+        </div>
+        <footer>
+            <div class="rowpad">
+                <div class="col-lg-12 text-content">
+                    Copyright &copy; Kundan_Raj
+                </div>
+            </div>
+        </footer>
     </body>
     
     
