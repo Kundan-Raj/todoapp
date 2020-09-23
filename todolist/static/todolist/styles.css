@@ -1,0 +1,97 @@
+*{box-sizing: border-box;}
+body {
+  font-family: Arial, Helvetica, sans-serif; margin-top: 0; background-color: dodgerblue;
+    margin-left: 40px; margin-right: 40px; align-content: center;
+}
+header{
+  margin-top: 10px;
+  background-color: #666;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+section{  display: -webkit-flex;
+  display: flex;}
+
+
+#content{
+    background-color: moccasin; padding:20px;margin-top: 80px;margin-bottom:20px;width: 100%;
+    
+}
+
+h1{
+    font-size:32px;
+    text-align: left;
+    color: gray;
+    font-family: sans-serif;
+    font-weight: 60;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+.form-control{
+  width: 80%;
+  background-color: ghostwhite;
+  color: black;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;  
+  
+}
+ /* #add-btn{
+    width: auto;
+    background-color: green;
+    color: floralwhite;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+}*/
+
+.btn-group{
+    width: 100%;
+    margin-top: 2px;
+}
+/* #delete-btn{
+    width: auto;
+    background-color: darkorange;
+    color: floralwhite;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+}
+#alldelete-btn{
+    width: auto;
+    background-color: red;
+    color: floralwhite;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+} 
+*/
+ul{
+  margin-top: 10px;
+  border-left: 5px solid red;
+  background-color: #f1f1f1;
+  list-style-type: none;
+  padding: 7px 20px;
+  width: 90%;
+}
+li{
+    margin-left: 10px;
+}
+#cutcompleted{
+    text-decoration: line-through;
+    border-left: 5px solid darkred;
+}
+
+
+
+.footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  margin-top:auto;
+  position:static;
+}
