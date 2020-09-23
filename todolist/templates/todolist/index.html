@@ -7,12 +7,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'todolist/bs/bootstrap.min.css' %}" />
         <link href="{% static 'todolist/styles.css'%}" rel="stylesheet" type="text/css" />
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     </head>
     
     <body>
+        <header><h2>To Do APP</h2></header>
+        <section>
+        <div class="card" id="content">
+        <h1>What to do today.</h1>
+        <!--
         <div class="col-lg-4 col-lg-offset-4" id="content">
         <h1>What to do today.</h1>
+        -->
             
         <form action="{% url 'add' %}" method="POST" role="form">
             {% csrf_token %}
@@ -21,37 +32,42 @@
                     {{form.text}}
                     <!--<input type="text" class="form-control" placeholder="Enter your todo lists e.g Wash my car" aria-label="Todo" aria-describedby="add-btn"> -->
                     <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default" id="add-btn">ADD</button>
+                        <button type="submit" class="btn btn-outline-success" id="add-btn">
+                            <i class="fas fa-plus"></i>
+                            ADD</button>
                     </span>
                 </div>
             </div>
         </form>
-            
+                    
+
+ 
         <div class="row t10">
             <div class="col-lg-12">
                 <div class="btn-toolbar">
                     <div class="btn-group">
                         <a href="{% url 'deletecompleted' %}">
-                        <button type="button" class="btn btn-warning">
-                            <i class="glyphicon glyphicon-trash"></i>
+                        <button type="button" class="btn btn-outline-warning" id="delete-btn">
+                            <i class="fas fa-trash-alt"></i>
                                 Delete compledted
                         </button> </a>
-                    </div>
-                    <div class="btn-group">
                         <a href="{% url 'deleteall' %}">
-                        <button type="button" class="btn btn-danger">
-                            <i class="glyphicon glyphicon-trash"></i>
+                        <button type="button" class="btn btn-outline-danger" id="alldelete-btn">
+                            <i class="far fa-trash-alt"></i>
                                 Deleted All
                             </button></a>
                     </div>
                 </div>
             </div>
         </div>
+            
+
+            
             <div class="list">
                 <ul class="list-group t20">
                 {% for todolist in todo_items %}
                     {% if todolist.completed %}
-                    <li class="list-group-items todo-completed">{{todolist.text}}</li>
+                    <li class="list-group-items todo-completed" id="cutcompleted">{{todolist.text}}</li>
                     {% else %}
                     <a href="{%url 'completed' todolist.id %}"><li class="list-group-items">{{todolist.text}}</li></a>
                     {% endif %}
@@ -65,12 +81,18 @@
             </div>
         </div>
 
-        <footer>
+        </section>
+        <div class="footer">
+            Copyright &copy; Kundan_Raj
+        </div>
+    </body> 
+            
+       <!-- <footer>
             <div class="row pad">
                 <div class="col-lg-12 text-content">
                     Copyright &copy; Kundan_Raj
                 </div>
             </div>
         </footer>
-    </body>   
+    </body>   -->
 </html>
